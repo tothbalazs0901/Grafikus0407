@@ -16,6 +16,9 @@ public class ablak extends javax.swing.JFrame {
      */
     public ablak() {
         initComponents();
+        setVisible(true);
+        setLocationRelativeTo(this);
+        btnMegoldas.setVisible(false);
     }
 
     /**
@@ -42,6 +45,7 @@ public class ablak extends javax.swing.JFrame {
         lbStatisztika = new javax.swing.JLabel();
         lbFeladatDb = new javax.swing.JLabel();
         lbSzazalek = new javax.swing.JLabel();
+        btnMegoldas = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -49,17 +53,25 @@ public class ablak extends javax.swing.JFrame {
 
         btnKivonas.setText("Kivonás");
 
-        txtValasz.setText("Válasz");
-
         btnEllenorzes.setText("Ellenőrzés");
+        btnEllenorzes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEllenorzesActionPerformed(evt);
+            }
+        });
 
         btnSzorzas.setText("Szorzás");
 
         btnOsztas.setText("Osztás");
+        btnOsztas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOsztasActionPerformed(evt);
+            }
+        });
 
         lbMuvelet.setText("Művelet");
 
-        lbMegoldas.setText("Helyes megoldás");
+        lbMegoldas.setText("A válaszod: ");
 
         btnOsszeadas.setText("Összeadás");
 
@@ -75,6 +87,13 @@ public class ablak extends javax.swing.JFrame {
         lbFeladatDb.setText("Feladatok száma");
 
         lbSzazalek.setText("Százalék: x%");
+
+        btnMegoldas.setText("Megoldás");
+        btnMegoldas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMegoldasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,7 +115,9 @@ public class ablak extends javax.swing.JFrame {
                             .addComponent(lbMuvelet, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtValasz, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(29, 29, 29)
-                        .addComponent(btnEllenorzes, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnMegoldas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEllenorzes, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -122,7 +143,9 @@ public class ablak extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(btnKivonas)
                             .addGap(18, 18, 18)
-                            .addComponent(btnSzorzas)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnSzorzas)
+                                .addComponent(btnMegoldas))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(btnOsztas)
@@ -145,6 +168,25 @@ public class ablak extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnOsztasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOsztasActionPerformed
+        lbMuvelet.setText("10/2= ");
+        
+    }//GEN-LAST:event_btnOsztasActionPerformed
+
+    private void btnEllenorzesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEllenorzesActionPerformed
+        if(txtValasz.getText().equals("5")){
+            lbMegoldas.setText("Jó válasz");
+            btnMegoldas.setVisible(true);
+        }else{
+            lbMegoldas.setText("Rossz válasz");
+        }
+        
+    }//GEN-LAST:event_btnEllenorzesActionPerformed
+
+    private void btnMegoldasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMegoldasActionPerformed
+        txtStatisztika.setText("osztás: 1");
+    }//GEN-LAST:event_btnMegoldasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,6 +226,7 @@ public class ablak extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEllenorzes;
     private javax.swing.JButton btnKivonas;
+    private javax.swing.JButton btnMegoldas;
     private javax.swing.JButton btnOsszeadas;
     private javax.swing.JButton btnOsztas;
     private javax.swing.JButton btnSzorzas;

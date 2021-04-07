@@ -48,7 +48,10 @@
                           <Component id="txtValasz" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="btnEllenorzes" min="-2" pref="91" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnMegoldas" max="32767" attributes="0"/>
+                          <Component id="btnEllenorzes" pref="91" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace pref="23" max="32767" attributes="0"/>
@@ -81,7 +84,10 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btnKivonas" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnSzorzas" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnSzorzas" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnMegoldas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnOsztas" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -117,14 +123,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtValasz">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="V&#xe1;lasz"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnEllenorzes">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ellen&#x151;rz&#xe9;s"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEllenorzesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSzorzas">
       <Properties>
@@ -135,6 +141,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Oszt&#xe1;s"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOsztasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbMuvelet">
       <Properties>
@@ -143,7 +152,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbMegoldas">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Helyes megold&#xe1;s"/>
+        <Property name="text" type="java.lang.String" value="A v&#xe1;laszod: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnOsszeadas">
@@ -186,6 +195,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Sz&#xe1;zal&#xe9;k: x%"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnMegoldas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Megold&#xe1;s"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMegoldasActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
