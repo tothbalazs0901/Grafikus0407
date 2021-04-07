@@ -40,6 +40,8 @@ public class ablak extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtStatisztika = new javax.swing.JTextArea();
         lbStatisztika = new javax.swing.JLabel();
+        lbFeladatDb = new javax.swing.JLabel();
+        lbSzazalek = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
@@ -70,11 +72,15 @@ public class ablak extends javax.swing.JFrame {
 
         lbStatisztika.setText("Statisztika");
 
+        lbFeladatDb.setText("Feladatok száma");
+
+        lbSzazalek.setText("Százalék: x%");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnSzorzas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -91,10 +97,13 @@ public class ablak extends javax.swing.JFrame {
                             .addComponent(txtValasz, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(29, 29, 29)
                         .addComponent(btnEllenorzes, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbStatisztika))
+                    .addComponent(lbStatisztika)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(lbSzazalek, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbFeladatDb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(36, 36, 36))
         );
         layout.setVerticalGroup(
@@ -127,7 +136,11 @@ public class ablak extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(txtValasz, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnEllenorzes)))))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(lbFeladatDb)
+                .addGap(26, 26, 26)
+                .addComponent(lbSzazalek)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
@@ -176,9 +189,11 @@ public class ablak extends javax.swing.JFrame {
     private javax.swing.JButton btnSzorzas;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lbFeladatDb;
     private javax.swing.JLabel lbMegoldas;
     private javax.swing.JLabel lbMuvelet;
     private javax.swing.JLabel lbStatisztika;
+    private javax.swing.JLabel lbSzazalek;
     private javax.swing.JLabel lbValasz;
     private javax.swing.JTextArea txtStatisztika;
     private javax.swing.JTextField txtValasz;
