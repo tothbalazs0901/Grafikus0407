@@ -7,11 +7,46 @@
         <Property name="text" type="java.lang.String" value="jTextField1"/>
       </Properties>
     </Component>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="mnuMuveletek">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="M&#x171;veletek"/>
+          </Properties>
+          <SubComponents>
+            <Menu class="javax.swing.JMenu" name="mnuOsszeadas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#xd6;sszead&#xe1;s"/>
+              </Properties>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="mnuKivonas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Kivon&#xe1;s"/>
+              </Properties>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="mnuSzorzas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Szorz&#xe1;s"/>
+              </Properties>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="mnuOsztas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Oszt&#xe1;s"/>
+              </Properties>
+              <Events>
+                <EventHandler event="menuSelected" listener="javax.swing.event.MenuListener" parameters="javax.swing.event.MenuEvent" handler="mnuOsztasMenuSelected"/>
+              </Events>
+            </Menu>
+          </SubComponents>
+        </Menu>
+      </SubComponents>
+    </Menu>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -30,80 +65,58 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="btnSzorzas" max="32767" attributes="0"/>
-                  <Component id="btnKivonas" max="32767" attributes="0"/>
-                  <Component id="btnOsztas" max="32767" attributes="0"/>
-                  <Component id="btnOsszeadas" max="32767" attributes="0"/>
+                  <Component id="lbMuvelet" max="32767" attributes="0"/>
+                  <Component id="lbValasz" alignment="1" max="32767" attributes="0"/>
+                  <Component id="txtValasz" alignment="1" max="32767" attributes="0"/>
+                  <Component id="lbMegoldas" min="-2" pref="114" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lbMegoldas" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="lbValasz" alignment="0" pref="65" max="32767" attributes="0"/>
-                          <Component id="lbMuvelet" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtValasz" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnMegoldas" max="32767" attributes="0"/>
-                          <Component id="btnEllenorzes" pref="91" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="btnMegoldas" min="-2" pref="91" max="-2" attributes="0"/>
+                  <Component id="btnEllenorzes" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace pref="17" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                   <Component id="lbStatisztika" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                       <Component id="lbSzazalek" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lbFeladatDb" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lbFeladatDb" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="39" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="lbMuvelet" min="-2" pref="23" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lbStatisztika" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="99" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                          <Component id="btnOsszeadas" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnKivonas" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnSzorzas" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnMegoldas" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnOsztas" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbMegoldas" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                          </Group>
+                      <Component id="lbValasz" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtValasz" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
+                          <Component id="btnEllenorzes" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                          <Component id="lbMuvelet" min="-2" pref="23" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lbValasz" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtValasz" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                              <Component id="btnEllenorzes" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="lbMegoldas" min="-2" pref="21" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="lbStatisztika" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="99" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="btnMegoldas" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -111,17 +124,12 @@
               <Component id="lbFeladatDb" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="lbSzazalek" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="62" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnKivonas">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Kivon&#xe1;s"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JTextField" name="txtValasz">
     </Component>
     <Component class="javax.swing.JButton" name="btnEllenorzes">
@@ -132,19 +140,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEllenorzesActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnSzorzas">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Szorz&#xe1;s"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnOsztas">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Oszt&#xe1;s"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOsztasActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="lbMuvelet">
       <Properties>
         <Property name="text" type="java.lang.String" value="M&#x171;velet"/>
@@ -153,11 +148,6 @@
     <Component class="javax.swing.JLabel" name="lbMegoldas">
       <Properties>
         <Property name="text" type="java.lang.String" value="A v&#xe1;laszod: "/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnOsszeadas">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#xd6;sszead&#xe1;s"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbValasz">

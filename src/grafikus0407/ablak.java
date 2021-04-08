@@ -5,20 +5,22 @@
  */
 package grafikus0407;
 
+import java.util.Random;
+
 /**
  *
  * @author Balazs
  */
 public class ablak extends javax.swing.JFrame {
-
-    /**
-     * Creates new form ablak
-     */
+    public int osztando;
+    public int oszto;
+    public int hanyados;
+    
     public ablak() {
         initComponents();
         setVisible(true);
         setLocationRelativeTo(this);
-        btnMegoldas.setVisible(false);
+        
     }
 
     /**
@@ -31,14 +33,10 @@ public class ablak extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
-        btnKivonas = new javax.swing.JButton();
         txtValasz = new javax.swing.JTextField();
         btnEllenorzes = new javax.swing.JButton();
-        btnSzorzas = new javax.swing.JButton();
-        btnOsztas = new javax.swing.JButton();
         lbMuvelet = new javax.swing.JLabel();
         lbMegoldas = new javax.swing.JLabel();
-        btnOsszeadas = new javax.swing.JButton();
         lbValasz = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtStatisztika = new javax.swing.JTextArea();
@@ -46,12 +44,16 @@ public class ablak extends javax.swing.JFrame {
         lbFeladatDb = new javax.swing.JLabel();
         lbSzazalek = new javax.swing.JLabel();
         btnMegoldas = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mnuMuveletek = new javax.swing.JMenu();
+        mnuOsszeadas = new javax.swing.JMenu();
+        mnuKivonas = new javax.swing.JMenu();
+        mnuSzorzas = new javax.swing.JMenu();
+        mnuOsztas = new javax.swing.JMenu();
 
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        btnKivonas.setText("Kivonás");
 
         btnEllenorzes.setText("Ellenőrzés");
         btnEllenorzes.addActionListener(new java.awt.event.ActionListener() {
@@ -60,20 +62,9 @@ public class ablak extends javax.swing.JFrame {
             }
         });
 
-        btnSzorzas.setText("Szorzás");
-
-        btnOsztas.setText("Osztás");
-        btnOsztas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOsztasActionPerformed(evt);
-            }
-        });
-
         lbMuvelet.setText("Művelet");
 
         lbMegoldas.setText("A válaszod: ");
-
-        btnOsszeadas.setText("Összeadás");
 
         lbValasz.setText("Válaszod:");
 
@@ -95,98 +86,133 @@ public class ablak extends javax.swing.JFrame {
             }
         });
 
+        mnuMuveletek.setText("Műveletek");
+
+        mnuOsszeadas.setText("Összeadás");
+        mnuMuveletek.add(mnuOsszeadas);
+
+        mnuKivonas.setText("Kivonás");
+        mnuMuveletek.add(mnuKivonas);
+
+        mnuSzorzas.setText("Szorzás");
+        mnuMuveletek.add(mnuSzorzas);
+
+        mnuOsztas.setText("Osztás");
+        mnuOsztas.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                mnuOsztasMenuSelected(evt);
+            }
+        });
+        mnuMuveletek.add(mnuOsztas);
+
+        jMenuBar1.add(mnuMuveletek);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnSzorzas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnKivonas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnOsztas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnOsszeadas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(104, 104, 104)
+                    .addComponent(lbMuvelet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbValasz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtValasz)
+                    .addComponent(lbMegoldas, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbMegoldas)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lbValasz, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                            .addComponent(lbMuvelet, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtValasz, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnMegoldas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEllenorzes, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                    .addComponent(btnMegoldas, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEllenorzes, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbStatisztika)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(lbSzazalek, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbFeladatDb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(36, 36, 36))
+                        .addComponent(lbFeladatDb, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addGap(201, 201, 201))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lbStatisztika)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(lbMuvelet, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(57, 57, 57)
-                            .addComponent(btnOsszeadas)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(btnKivonas)
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btnSzorzas)
-                                .addComponent(btnMegoldas))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btnOsztas)
-                                .addComponent(lbMegoldas, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(51, 51, 51)
-                            .addComponent(lbMuvelet, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lbValasz)
-                            .addGap(10, 10, 10)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtValasz, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnEllenorzes)))))
+                        .addComponent(lbValasz)
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtValasz, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEllenorzes))
+                        .addGap(18, 18, 18)
+                        .addComponent(lbMegoldas, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbStatisztika)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnMegoldas))))
                 .addGap(18, 18, 18)
                 .addComponent(lbFeladatDb)
                 .addGap(26, 26, 26)
                 .addComponent(lbSzazalek)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGap(52, 52, 52))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnOsztasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOsztasActionPerformed
-        lbMuvelet.setText("10/2= ");
+    
+    public void szamolas() {
+        Random r = new Random();
+        boolean jo;
+        osztando = r.nextInt(101);
         
-    }//GEN-LAST:event_btnOsztasActionPerformed
+        do {
+            oszto = r.nextInt(101) + 1;
+            hanyados = osztando / oszto;
+            jo = osztando % oszto == 0 && hanyados <= 100;
+        } while (!jo);
+        
+        kiirMuvelet(osztando, oszto);
+    }
+    
+    public void kiirMuvelet(int osztando, int oszto){
+        lbMuvelet.setText(osztando + "/" + oszto + " = ");
+    }
 
+    private void mnuOsztasActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        szamolas();
+    }                 
     private void btnEllenorzesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEllenorzesActionPerformed
-        if(txtValasz.getText().equals("5")){
-            lbMegoldas.setText("Jó válasz");
-            btnMegoldas.setVisible(true);
-        }else{
-            lbMegoldas.setText("Rossz válasz");
+        try {
+            int valasz = Integer.parseInt(txtValasz.getText());
+        if (valasz == hanyados) {
+            lbMegoldas.setText("Helyes válasz!");
+        } else {
+            lbMegoldas.setText("Rossz válasz!");
+        }
+        } catch (NumberFormatException e) {
+            lbMegoldas.setText("Pozitív egész számot adjon meg!");
         }
         
     }//GEN-LAST:event_btnEllenorzesActionPerformed
 
     private void btnMegoldasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMegoldasActionPerformed
-        txtStatisztika.setText("osztás: 1");
+        //txtStatisztika.setText("osztás: 1");
     }//GEN-LAST:event_btnMegoldasActionPerformed
+
+    private void mnuOsztasMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_mnuOsztasMenuSelected
+        szamolas();
+    }//GEN-LAST:event_mnuOsztasMenuSelected
 
     /**
      * @param args the command line arguments
@@ -225,11 +251,8 @@ public class ablak extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEllenorzes;
-    private javax.swing.JButton btnKivonas;
     private javax.swing.JButton btnMegoldas;
-    private javax.swing.JButton btnOsszeadas;
-    private javax.swing.JButton btnOsztas;
-    private javax.swing.JButton btnSzorzas;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lbFeladatDb;
@@ -238,6 +261,11 @@ public class ablak extends javax.swing.JFrame {
     private javax.swing.JLabel lbStatisztika;
     private javax.swing.JLabel lbSzazalek;
     private javax.swing.JLabel lbValasz;
+    private javax.swing.JMenu mnuKivonas;
+    private javax.swing.JMenu mnuMuveletek;
+    private javax.swing.JMenu mnuOsszeadas;
+    private javax.swing.JMenu mnuOsztas;
+    private javax.swing.JMenu mnuSzorzas;
     private javax.swing.JTextArea txtStatisztika;
     private javax.swing.JTextField txtValasz;
     // End of variables declaration//GEN-END:variables
